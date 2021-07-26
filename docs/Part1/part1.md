@@ -2,13 +2,8 @@
 
 这个 Part 我们主要讨论如何拆分 Git 仓库的问题。我们首先来明确什么样的拆分结果是“好”的，如果拆分不当其症状是什么：
 
-<<<<<<< HEAD:docs/Part1/part1.md
 * [[autonomy-metrics]] 度量 Autonomy 的指标
 * [[consistency-metrics]] 度量 Consistency 的指标
-=======
-* [[AutonomyMetrics]]度量 Autonomy 的指标
-* [[ConsistencyMetrics]]度量 Consistency 的指标
->>>>>>> ddc56d4887dd0db72bef407dac72539100b05888:docs/Part1/README.md
 
 但是要保持代码是“好”的状况很难。代码腐化似乎注定的
 
