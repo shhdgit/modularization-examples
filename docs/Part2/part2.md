@@ -28,32 +28,32 @@
 
 ## 拆分进程的目标
 
-在讨论应该如何去拆之前，我们先来看一下[进程拆分不好导致的症状，以及度量 Feedback 维度做得如何的指标](./FeedbackMetrics.md)。
+在讨论应该如何去拆之前，我们先来看一下进程拆分不好导致的症状，以及度量 Feedback 维度做得如何的指标[[feedback-metrics]]。
 
 ## 发布变更，告警定位该如何做？
 
 只对自己写的代码负责要体现在发布变更，告警定位这两个环节里。
 
-* [发布变更](./ControlChange.md)：变更之前可以工作，加入了我的变更之后不工作了，那就是我的变更引起的问题。如果不能有效地隔离自己的变更，就要被迫去处理别人写的代码。
-    * [多进程](./MultiProcess/README.md)：把单体进程切分成多进程。一次只变更其中的一个。
-    * [多租户](./MultiTenancy/README.md)：把所有的业务数据分成租户。一次只升级一个租户的数据和代码。
-    * [多变种](./MultiVariant/README.md)：分租户还是粒度太粗了，比如说挂掉一个城市也是不可接受的。那么可以在线上同时运行多个版本的代码，然后逐步的切流量。
-* [告警定位](./ControlBoundary.md)：接到告警了如何能快速定位到问题。其核心就是需要在你的代码和别人的代码之间有统一方式定义的边界。不需要知道边界里面的代码是怎么写的，只要看一眼边界上的监控数据就能快速排除不是自己的问题。然后把锅甩出去。
-    * [进程边界](./ProcessBoundary/README.md)
-    * [函数边界](./FunctionBoundary/README.md)
-    * [插件边界](./PluginBoundary/README.md)
+* 发布变更[[control-change]]：变更之前可以工作，加入了我的变更之后不工作了，那就是我的变更引起的问题。如果不能有效地隔离自己的变更，就要被迫去处理别人写的代码。
+    * 多进程[[multi-process]]：把单体进程切分成多进程。一次只变更其中的一个。
+    * 多租户[[multi-tenancy]]：把所有的业务数据分成租户。一次只升级一个租户的数据和代码。
+    * 多变种[[multi-variant]]：分租户还是粒度太粗了，比如说挂掉一个城市也是不可接受的。那么可以在线上同时运行多个版本的代码，然后逐步的切流量。
+* 告警定位[[control-boundary]]：接到告警了如何能快速定位到问题。其核心就是需要在你的代码和别人的代码之间有统一方式定义的边界。不需要知道边界里面的代码是怎么写的，只要看一眼边界上的监控数据就能快速排除不是自己的问题。然后把锅甩出去。
+    * [[process-boundary]] 进程边界
+    * [[function-boundary]] 函数边界
+    * [[plugin-boundary]] 插件边界
 
 ## 拆进程不是唯一选择，应该 Autonomy 优先
 
 回到微服务应该怎么拆分，多少个进程是合理的。
-相比 [ProcessBoundary](./ProcessBoundary/README.md)，我认为控制好 [FunctionBoundary](./FunctionBoundary/README.md) 和 [PluginBoundary](./PluginBoundary/README.md) 更有利于 Feedback。
-相比 [MultiProcess](./MultiProcess/README.md)，我认为一开始就设计好 [MultiTenancy](./MultiTenancy/README.md) 和 [MultiVariant](./MultiVariant/README.md) 更有利于 Feedback。
+相比进程边界[[process-boundary]]，我认为控制好函数边界[[function-boundary]]和插件边界[[plugin-boundary]]更有利于 Feedback。
+相比多进程[[multi-process]]，我认为一开始就设计好多租户[[multi-tenancy]]和多变种[[multi-variant]]更有利于 Feedback。
 进程之所以好用是因为开源社区提供了很完善的基础设施。所以我们习惯了迁就于已有的技术设施，来切分进程以利用上这些现成的设施。
 从而因为进程的切分来影响我们对Git仓库和团队的切分。
 
-如果能够做好 [FunctionBoundary](./FunctionBoundary/README.md)，[PluginBoundary](./PluginBoundary/README.md)，[MultiTenancy](./MultiTenancy/README.md) 以及 [MultiVariant](./MultiVariant/README.md)，怎么分进程根本就不是一个问题。
+如果能够做好函数边界[[function-boundary]]，插件边界[[plugin-boundary]]，多租户[[multi-tenancy]]以及多变种[[multi-variant]]，怎么分进程根本就不是一个问题。
 所有的代码都跑在一个进程内，一样可以把 Feedback 做得很好。
 那微服务的拆分，其实就等价于Git仓库的拆分，也就是 Autonomy 章节中讨论的问题，怎么拆团队拆Git仓库的问题。
 其主旨原则就一条：拆分之后，接口的定义要稳定，不要天天修改，导致频繁的跨团队强协作。我们也对怎么量化这个原则给出了指标计算的方法。
 
-所以 [Autonomy](../Part1/AutonomyMetrics.md) 优先，[Feedback](./FeedbackMetrics.md) 的问题，交给基础架构部门通过改进基础设施来解决。
+所以 Autonomy[[autonomy-metrics]] 优先，Feedback[[feedback-metrics]] 的问题，交给基础架构部门通过改进基础设施来解决。

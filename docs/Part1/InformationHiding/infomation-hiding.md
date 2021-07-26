@@ -64,7 +64,7 @@ Class 有封装和依赖关系。Git 仓库也有封装和依赖关系。
 ![GitDependency](./GitDependency.drawio.svg)
 
 在上图中，B和C是互相隐藏的。B的实现细节对C隐藏了，C的实现细节对B也隐藏了。
-我们都使用过 visual studio code，其插件化架构就类似上面的依赖关系。[[../VscodeExample/README]]通过新增插件来实现功能的扩展。
+我们都使用过 visual studio code，其插件化架构就类似上面的依赖关系。通过新增插件来实现功能的扩展[[vscode-example]]。
 
 我们可以把这种做法更一般的描述为“主板+插件”。
 
@@ -91,16 +91,16 @@ Class 有封装和依赖关系。Git 仓库也有封装和依赖关系。
 
 理论上看起来很美好，然而有两个问题
 
-* [[../DependencyInversion/README]]主板+插件的技术方案有哪些选择？
-* [对应具体的业务需求，怎么拆分出主板和插件来？](../Integration/README.md)
-    * [离散型 UI](../Integration/DiscreteUI/README.md)
-    * [混合型 UI](../Integration/MixedUI/README.md)
-    * [离散型流程](../Integration/DiscreteProcess/README.md)
-    * [混合型流程](../Integration/MixedProcess/README.md)
-    * [产品族](../Integration/ProductFamily/README.md)
-    * [领先技术](../Integration/Library/README.md)
+* [[dependency-inversion]] 主板+插件的技术方案有哪些选择？
+* [[integration]] 对应具体的业务需求，怎么拆分出主板和插件来？
+    * [[discrete-ui]] 离散型 UI
+    * [[mixed-ui]] 混合型 UI
+    * [[discrete-process]] 离散型流程
+    * [[mixed-process]] 混合型流程
+    * [[product-family]] 产品族
+    * [[library]] 领先技术
 
-最后我们来看一个[亚马逊商城的综合案例](../AmazonExample/README.md)。
+最后我们来看一个亚马逊商城的综合案例[[amazon-example]]。
 
 ## 不倒置可不可以？
 

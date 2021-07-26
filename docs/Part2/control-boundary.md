@@ -15,8 +15,8 @@
 
 边界从大到小，我们可以分为
 
-* [进程边界](./ProcessBoundary/README.md)
-* [函数边界](./FunctionBoundary/README.md)
-* [插件边界](./PluginBoundary/README.md)
+* [[process-boundary]] 进程边界
+* [[function-boundary]] 函数边界
+* [[plugin-boundary]] 插件边界
 
 Git 仓库独占一个进程未必是唯一的选项。把 Git 仓库以插件的形式，在进程内再切分出插件边界也是可以满足 Feedback 需求的。
