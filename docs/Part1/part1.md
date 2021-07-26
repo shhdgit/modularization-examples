@@ -2,8 +2,8 @@
 
 这个 Part 我们主要讨论如何拆分 Git 仓库的问题。我们首先来明确什么样的拆分结果是“好”的，如果拆分不当其症状是什么：
 
-* [度量 Autonomy 的指标](./AutonomyMetrics.md)
-* [度量 Consistency 的指标](./ConsistencyMetrics.md)
+* [[autonomy-metrics]] 度量 Autonomy 的指标
+* [[consistency-metrics]] 度量 Consistency 的指标
 
 但是要保持代码是“好”的状况很难。代码腐化似乎注定的
 
@@ -19,5 +19,5 @@
 虽然很多人醉心于遗留代码改造之道。笔者也从事铲屎业务很多年，仍未掌握此项技术。
 还是让代码一直保持在未腐化的状态更简单一些。那么代码如何防腐呢？不靠 Code Review 又靠什么呢？
 
-* [对策1：信息隐藏](./InformationHiding/README.md)
-* [对策2：持续改进](./Consensus.md)
+* [[infomation-hiding]] 对策1：信息隐藏
+* [[consensus]] 对策2：持续改进

@@ -1,5 +1,3 @@
-[https://autonomy.design](https://autonomy.design)
-
 # 症状
 
 如果没有做好业务逻辑拆分，可能在项目晚期造成以下三种问题：
@@ -28,10 +26,10 @@
 
 我不是销售像 Angular 那样可以直接 git clone 一份的代码框架给你。我想分享的是一套可以适用于任何语言和框架的分解业务逻辑的套路。从《Clean Architecture》和《Domain Driven Design》你应该已经学到了很多了。如果仍然不会拆，那么可以再读读《业务逻辑拆分模式》试试。
 
-* [拆分成什么呢?](./docs/Modules.md)
-* [Part.1 代码防腐](./docs/Part1/README.md)
-* [Part.2 只对自己写的代码负责](./docs/Part2/README.md)
-* [Part.3 突出大逻辑，隐藏小细节](./docs/Part3/README.md)
+* [[modules]] 拆分成什么呢?
+* [[part1]] Part.1 代码防腐
+* [[part2]] Part.2 只对自己写的代码负责
+* [[part3]] Part.3 突出大逻辑，隐藏小细节
 
 飞书群：
 
