@@ -64,7 +64,7 @@ Class 有封装和依赖关系。Git 仓库也有封装和依赖关系。
 ![GitDependency](./GitDependency.drawio.svg)
 
 在上图中，B和C是互相隐藏的。B的实现细节对C隐藏了，C的实现细节对B也隐藏了。
-我们都使用过 visual studio code，其插件化架构就类似上面的依赖关系。[通过新增插件来实现功能的扩展](../VscodeExample/README.md)。
+我们都使用过 visual studio code，其插件化架构就类似上面的依赖关系。[[../VscodeExample/README]]通过新增插件来实现功能的扩展。
 
 我们可以把这种做法更一般的描述为“主板+插件”。
 
@@ -91,7 +91,7 @@ Class 有封装和依赖关系。Git 仓库也有封装和依赖关系。
 
 理论上看起来很美好，然而有两个问题
 
-* [主板+插件的技术方案有哪些选择？](../DependencyInversion/README.md)
+* [[../DependencyInversion/README]]主板+插件的技术方案有哪些选择？
 * [对应具体的业务需求，怎么拆分出主板和插件来？](../Integration/README.md)
     * [离散型 UI](../Integration/DiscreteUI/README.md)
     * [混合型 UI](../Integration/MixedUI/README.md)
