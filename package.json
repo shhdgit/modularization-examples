@@ -1,0 +1,21 @@
+{
+  "name": "modularization-examples",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "gatsby": "^2.21.22",
+    "gatsby-theme-gardenx": "^0.1.2",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "start": "gatsby serve"
+  }
+}
